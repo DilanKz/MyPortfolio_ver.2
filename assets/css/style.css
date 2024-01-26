@@ -2,11 +2,10 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* cursor: default; */
-    cursor: none;
+     cursor: default;
+    /*cursor: none;*/
     font-family: sans-serif;
 }
-
 #rotateMessage {
     position: absolute;
     top: 0;
@@ -34,9 +33,8 @@ body {
     box-sizing: border-box;
     overflow: hidden;
     white-space: normal;
-    /*padding: 20px;*/
     position: relative;
-    padding-top: 5rem;
+    padding: 5rem 50px 3.5rem;
 }
 
 #navbar {
@@ -120,10 +118,10 @@ body {
 .titleSection h1 {
     position: relative;
     z-index: 2;
-}
-
-h1, p {
-    text-align: center;
+    font-weight: normal;
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
 }
 
 #home-section {
@@ -176,16 +174,69 @@ h1, p {
     background-color: black;
     color: #f0f0f0;
 }
+
+.content-section{
+    padding-top: 2rem;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-section div{
+    margin-bottom: 2rem;
+}
+
+.content-section div h2{
+    width: max-content;
+    text-decoration: underline black;
+}
+
+/*Keyframe for skills*/
+
+@keyframes skillSlider {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.stack{
+    padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    z-index: 200;
+}
+
+.skill-slide{
+    display: inline-block;
+    animation: 25s skillSlider infinite linear;
+}
+
+.skill-slide img {
+    height: 50px;
+    margin: 0 40px;
+}
+
+/*end animation and about me*/
+
 footer{
-    background: black;
+    /*background: black;*/
+    padding-left: 10px;
+    padding-right: 10px;
+    /*border-top: 2px solid black;*/
     width: 100%;
     height: 3rem;
     position: fixed;
     bottom: 0;
     left: 0;
-    color: #f0f0f0;
+    color: black;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    z-index: 100;
 }
 
 footer ul{
@@ -197,4 +248,13 @@ footer ul{
 footer ul li{
     display: inline-block;
     padding-right: 4px;
+}
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+
+}
+
+@media only screen and (max-width: 480px) {
+    /* Styles for devices with a maximum width of 480 pixels */
+    /* Typically used for smartphones in portrait orientation */
 }
