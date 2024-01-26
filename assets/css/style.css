@@ -46,10 +46,11 @@ body {
     left: 0;
     display: flex;
     justify-content: space-between;
-    z-index: 100;
+    z-index: 120;
+    background: #f0f0f0;
 }
 
-#circleCursor {
+/*#circleCursor {
     position: absolute;
     top: -100px;
     left: -100px;
@@ -59,12 +60,19 @@ body {
     border: 2px solid black;
     z-index: 100;
     transition: width 0.3s ease, height 0.3s ease;
-}
+}*/
 
 #navbar #menu {
     padding: 2rem;
     font-weight: bold;
     font-family: sans-serif;
+    border: 0;
+    font-size: 1.25rem;
+}
+
+#menu-section {
+    width: 100vw;
+    height: 100vw;
 }
 
 #logo {
@@ -82,6 +90,7 @@ body {
     animation: textstroke 4s infinite alternate;
 }
 
+/*
 .cursorBig {
     cursor: none;
     position: relative;
@@ -96,7 +105,7 @@ body {
     min-height: 70px;
     border-radius: 50%;
     opacity: 0;
-    /*background: rgba(0, 0, 0, 0.31);*/
+    !*background: rgba(0, 0, 0, 0.31);*!
     transition: opacity 0.3s ease;
     top: 50%;
     left: 50%;
@@ -106,7 +115,7 @@ body {
 
 .cursorBig:hover::after {
     opacity: 1;
-}
+}*/
 
 
 .titleSection {
@@ -216,6 +225,10 @@ body {
     animation: 25s skillSlider infinite linear;
 }
 
+.stack:hover .skill-slide {
+    animation-play-state: paused;
+}
+
 .skill-slide img {
     height: 50px;
     margin: 0 40px;
@@ -223,12 +236,37 @@ body {
 
 /*end animation and about me*/
 
+.projects {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    /*z-index: 200;*/
+}
+
+.project-slide {
+    display: inline-block;
+    animation: 20s skillSlider infinite linear;
+}
+
+.projects:hover .project-slide {
+    animation-play-state: paused;
+}
+
+.project {
+    width: 300px;
+    height: 450px;
+    background: gray;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
 footer {
     /*background: black;*/
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 50px;
+    /*padding-right: 60px;*/
     border-top: 2px solid black;
-    width: 100%;
+    width: 100vw;
     height: 3rem;
     position: fixed;
     bottom: 0;
@@ -242,7 +280,7 @@ footer {
 footer ul {
     text-decoration: none;
     list-style: none;
-    margin-right: 15px;
+    margin-right: 85px;
 }
 
 footer ul li {
@@ -255,7 +293,7 @@ footer ul li {
 }
 
 @media only screen and (max-width: 480px) {
-    #about-me p{
+    #about-me p {
         font-size: 10px;
     }
 }
