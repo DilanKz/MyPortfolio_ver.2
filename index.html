@@ -24,10 +24,10 @@
 </header>
 
 <main id="menu-section">
-    <h1><a href="#home-section">HOME</a></h1>
-    <h1><a href="#about-section">ABOUT</a></h1>
-    <h1><a href="#career-section">CAREER</a></h1>
-    <h1><a href="#project-section">PROJECTS</a></h1>
+    <h1 class="nav-link"><a href="#home-section">HOME</a></h1>
+    <h1 class="nav-link"><a href="#about-section">ABOUT</a></h1>
+    <h1 class="nav-link"><a href="#career-section">CAREER</a></h1>
+    <h1 class="nav-link"><a href="#project-section">PROJECTS</a></h1>
 </main>
 
 <main class="scroll-container" id="scrollContainer">
@@ -41,7 +41,7 @@
             <h1>THARINDU DILAN</h1>
             <h1>SOFTWARE DEVELOPER</h1>
             <div id="button-section">
-                <button class="cursorBig" style="width: max-content">Contact me</button>
+                <button class="cursorBig" style="width: max-content">Resume</button>
             </div>
         </div>
 
@@ -184,13 +184,11 @@
 
 
     let menu = document.getElementById('menu');
-    let navbar = document.getElementById('navbar');
     let logo = document.getElementsByClassName('svgLogo')[0];
 
     menu.addEventListener('click', () => {
         if (menu.innerText === 'MENU') {
             document.getElementById('menu-section').style.bottom= '0';
-            // document.getElementById('menu-section').style.paddingTop='4rem'
 
             menu.innerText = 'CLOSE';
             menu.style.color='#f0f0f0'
@@ -198,7 +196,6 @@
 
         } else {
             document.getElementById('menu-section').style.bottom= '100vh';
-            // document.getElementById('menu-section').style.paddingTop='0'
 
             menu.innerText = 'MENU';
             menu.style.color='#000'
@@ -206,6 +203,17 @@
         }
     });
 
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(navLink => {
+        navLink.addEventListener('click', () => {
+            document.getElementById('menu-section').style.bottom = '100vh';
+            menu.innerText = 'MENU';
+            menu.style.color='#000'
+            logo.style.fill='#000'
+        });
+    });
 
     /*function isTouchDevice() {
         return 'ontouchstart' in window || navigator.maxTouchPoints;
