@@ -22,7 +22,7 @@ body {
     display: flex;
     white-space: nowrap;
     overflow-x: hidden;
-    overflow-y: hidden; /* Disable vertical scrolling */
+    overflow-y: hidden;
     scroll-behavior: smooth;
 }
 
@@ -461,7 +461,7 @@ footer ul li {
 
 @media (max-width: 767px) {
     #menu-section{
-        padding-top: 3vh;
+        padding-top: 13vh;
     }
 
     #menu-section h1 {
