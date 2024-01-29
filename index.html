@@ -430,27 +430,27 @@
     </ul>
 </footer>
 
-<!--<div class="loader-wrapper">
+<div class="loader-wrapper">
     <div id="percentage" class="percentage">0%</div>
-</div>-->
-
-<!-- Your content goes here -->
+</div>
 
 <script>
-    var percentage = 0;
-    var interval = setInterval(function () {
-        $('#percentage').text(percentage + '%');
-        if (percentage >= 100) {
-            clearInterval(interval);
-            setTimeout(function () {
-                $('.loader-wrapper').css({
-                    'transform': 'translateX(-100vw)',
-                    'transition': 'transform 0.5s ease-in'
-                });
-            }, 1000)
-        }
-        percentage++;
-    }, 20);
+    $(document).ready(function() {
+        var percentage = 0;
+        var interval = setInterval(function () {
+            $('#percentage').text(percentage + '%');
+            if (percentage >= 100) {
+                clearInterval(interval);
+                setTimeout(function () {
+                    $('.loader-wrapper').css({
+                        'transform': 'translateX(-100vw)',
+                        'transition': 'transform 0.5s ease-in'
+                    });
+                }, 1000)
+            }
+            percentage++;
+        }, 20);
+    });
 </script>
 
 <script>
